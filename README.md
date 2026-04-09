@@ -1,3 +1,7 @@
+
+| File | Live Demo |
+|------|-----------|
+| [My Website](index.html) | [Open Site](https://nimramumtaz.github.io/NimraMumtaz29.github.io/) |
 # 🛍️ QuickCart Pro — Pakistan's Mega Mall
 ### Web Technologies Project — HTML + CSS + JavaScript
 
