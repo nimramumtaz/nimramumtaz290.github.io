@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>QuickCart — Pakistan's Mega Mall</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-track" id="tickerTrack">
+  <span>🚚 Free delivery above Rs.1,500</span><span>🔥 Up to 60% OFF on Fashion</span>
+  <span>📱 New Electronics Arrivals</span><span>🎁 Eid Collection is Live</span>
+  <span>⚡ Same-day delivery in Faisalabad</span><span>💳 Cash on Delivery Available</span>
+  <span>🔄 Easy 7-day returns</span><span>🚚 Free delivery above Rs.1,500</span>
+  <span>🔥 Up to 60% OFF on Fashion</span><span>📱 New Electronics Arrivals</span>
+  <span>🎁 Eid Collection is Live</span><span>⚡ Same-day delivery in Faisalabad</span>
+  <span>💳 Cash on Delivery Available</span><span>🔄 Easy 7-day returns</span>
+</div></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-l"><span>🇵🇰 QuickCart Pakistan</span><span class="tsep">|</span><a href="#contact">Help</a><span class="tsep">|</span><a href="#contact">Track Order</a><span class="tsep">|</span><a href="#contact">Sell on QuickCart</a></div>
+  <div class="tb-r"><span>📞 03194854924</span><span class="tsep">|</span><a href="#contact">Download App</a></div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Quick<span>Cart</span></a>
+  <div class="nav-search">
+    <input type="text" id="searchInput" placeholder="Search products, brands, categories…" oninput="doSearch()"/>
+    <button class="search-btn" onclick="doSearch()">🔍</button>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" onclick="closeMob()">Home</a></li>
+    <li><a href="#shop" onclick="closeMob()">Shop</a></li>
+    <li><a href="#deals" onclick="closeMob()">Deals</a></li>
+    <li><a href="#gallery" onclick="closeMob()">Gallery</a></li>
+    <li><a href="#contact" onclick="closeMob()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" onclick="openWish()">❤️<span class="nav-badge" id="wishCount" style="display:none">0</span></button>
+    <button class="cart-nav-btn" onclick="openCart()">🛒 Cart <span class="cart-badge" id="cartBadge">0</span></button>
+    <button class="hamburger" id="hamBtn" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-blob b1"></div><div class="hero-blob b2"></div><div class="hero-blob b3"></div>
+  <div class="hero-left">
+    <div class="hero-kicker"><span class="kdot"></span>Pakistan's #1 Mega Mall — 72 Products, 16 Categories</div>
+    <h1 class="hero-h1">Shop <span class="hc1">Everything</span><br><span class="hc2">You Love &amp; Need</span></h1>
+    <p class="hero-p">Food, Fashion, Electronics, Beauty, Sports, Books, Groceries &amp; more — all in one place. Lightning-fast delivery across Pakistan.</p>
+    <div class="hero-btns">
+      <a href="#shop" class="btn-p">🛍️ Shop Now</a>
+      <a href="#deals" class="btn-o">⚡ Flash Deals</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item"><span class="tdot"></span>Free Delivery above Rs.1,500</span>
+      <span class="trust-item"><span class="tdot"></span>7-Day Easy Returns</span>
+      <span class="trust-item"><span class="tdot"></span>Cash on Delivery</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hn">50K+</div><div class="hl">Customers</div></div>
+      <div class="hstat"><div class="hn">72+</div><div class="hl">Products</div></div>
+      <div class="hstat"><div class="hn">16</div><div class="hl">Categories</div></div>
+      <div class="hstat"><div class="hn">4.9★</div><div class="hl">Rating</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-orb"><span class="hero-emoji" id="heroEmoji">🛍️</span></div>
+    <div class="fc fc1"><span>⚡</span><div><small>Delivery</small><b>Same Day</b></div></div>
+    <div class="fc fc2"><span>🔒</span><div><small>Payment</small><b>100% Secure</b></div></div>
+    <div class="fc fc3"><span>🎁</span><div><small>Offers</small><b>Up to 60% OFF</b></div></div>
+    <div class="fc fc4"><span>🔄</span><div><small>Returns</small><b>7-Day Free</b></div></div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands-strip">
+  <div class="brands-inner">
+    <span class="brand">Bonanza</span><span class="brand">Gul Ahmed</span><span class="brand">Khaadi</span>
+    <span class="brand">Outfitters</span><span class="brand">Servis</span><span class="brand">Samsung</span>
+    <span class="brand">Nestlé</span><span class="brand">Unilever</span><span class="brand">Dawlance</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="sec bg-light" id="shop">
+  <div class="sec-head reveal"><div class="sec-kicker">All Departments</div>
+    <h2 class="sec-title">Browse <em>Every Category</em></h2>
+    <p class="sec-sub">From daily groceries to luxury fashion — 16 departments, 72+ products.</p>
+  </div>
+  <div class="cat-grid reveal" id="catGrid"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec" id="products">
+  <div class="sec-head reveal">
+    <div class="sec-kicker" id="prodKicker">All Products</div>
+    <h2 class="sec-title" id="prodTitle">Explore Our <em>Full Collection</em></h2>
+  </div>
+  <div class="filter-bar reveal">
+    <div class="filter-chips" id="filterChips">
+      <button class="fchip active" onclick="setFilter('all',this)">All</button>
+      <button class="fchip" onclick="setFilter('new',this)">✨ New</button>
+      <button class="fchip" onclick="setFilter('sale',this)">💸 Sale</button>
+      <button class="fchip" onclick="setFilter('best',this)">⭐ Best Sellers</button>
+      <button class="fchip" onclick="setFilter('deal',this)">🏷️ Hot Deals</button>
+      <button class="fchip" onclick="setFilter('hot',this)">🔥 Trending</button>
+    </div>
+    <div class="filter-right">
+      <select id="sortSel" onchange="doSort()">
+        <option value="def">Sort: Default</option>
+        <option value="asc">Price: Low → High</option>
+        <option value="desc">Price: High → Low</option>
+        <option value="rate">Top Rated</option>
+        <option value="az">Name A–Z</option>
+      </select>
+      <span class="res-count" id="resCount"></span>
+    </div>
+  </div>
+  <div class="empty-state" id="emptyState" style="display:none"><div class="es-icon">🔍</div><p>No products found!</p></div>
+  <div class="prod-grid" id="prodGrid"></div>
+</section>
+
+<!-- PROMO BANNERS -->
+<section class="sec bg-light">
+  <div class="sec-head reveal"><div class="sec-kicker">Exclusive Offers</div><h2 class="sec-title">Don't Miss These <em>Deals</em></h2></div>
+  <div class="promo-grid reveal">
+    <div class="promo-card pc-purple" onclick="filterByCat('fashion')"><div class="pc-bg">👗</div><div class="pc-c"><div class="pc-tag">Fashion Week</div><div class="pc-title">Eid Fashion Collection</div><div class="pc-off">Up to 50% OFF</div></div></div>
+    <div class="promo-card pc-amber" onclick="filterByCat('food')"><div class="pc-bg">🍔</div><div class="pc-c"><div class="pc-tag">Food Deals</div><div class="pc-title">Fresh Food Orders</div><div class="pc-off">Free Delivery</div></div></div>
+    <div class="promo-card pc-green" onclick="filterByCat('electronics')"><div class="pc-bg">📱</div><div class="pc-c"><div class="pc-tag">Tech Sale</div><div class="pc-title">Latest Electronics</div><div class="pc-off">35% OFF</div></div></div>
+    <div class="promo-card pc-blue" onclick="filterByCat('sports')"><div class="pc-bg">⚽</div><div class="pc-c"><div class="pc-tag">Sports Zone</div><div class="pc-title">Fitness Gear</div><div class="pc-off">Buy 2 Get 1</div></div></div>
+    <div class="promo-card pc-pink" onclick="filterByCat('beauty')"><div class="pc-bg">💄</div><div class="pc-c"><div class="pc-tag">Beauty Picks</div><div class="pc-title">Skincare &amp; Makeup</div><div class="pc-off">40% OFF</div></div></div>
+  </div>
+</section>
+
+<!-- FLASH DEALS -->
+<section class="sec flash-sec" id="deals">
+  <div class="flash-head">
+    <div><div class="sec-kicker" style="background:rgba(255,255,255,.15);color:#fff;">⚡ Limited Time</div><h2 class="flash-title">Flash Deals</h2></div>
+    <div class="flash-timer"><span class="tlbl">Ends in:</span><span class="tbox" id="th">00</span><span class="tsep2">:</span><span class="tbox" id="tm">00</span><span class="tsep2">:</span><span class="tbox" id="ts">00</span></div>
+  </div>
+  <div class="flash-grid" id="flashGrid"></div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec bg-light" id="gallery">
+  <div class="sec-head reveal"><div class="sec-kicker">Visual Store</div><h2 class="sec-title">Explore by <em>Showcase</em></h2></div>
+  <div class="gallery-grid reveal">
+    <div class="gal-item g-orange gi-big" onclick="filterByCat('food')"><span class="gal-emoji">🍔</span><div class="gal-ov"><span>🍔 Fresh Food &amp; Drinks</span></div></div>
+    <div class="gal-item g-purple" onclick="filterByCat('fashion')"><span class="gal-emoji">👗</span><div class="gal-ov"><span>👗 Fashion</span></div></div>
+    <div class="gal-item g-blue" onclick="filterByCat('electronics')"><span class="gal-emoji">📱</span><div class="gal-ov"><span>📱 Electronics</span></div></div>
+    <div class="gal-item g-pink" onclick="filterByCat('beauty')"><span class="gal-emoji">💄</span><div class="gal-ov"><span>💄 Beauty</span></div></div>
+    <div class="gal-item g-green" onclick="filterByCat('sports')"><span class="gal-emoji">⚽</span><div class="gal-ov"><span>⚽ Sports</span></div></div>
+    <div class="gal-item g-red gi-wide" onclick="filterByCat('grocery')"><span class="gal-emoji">🛒</span><div class="gal-ov"><span>🛒 Grocery &amp; Daily Needs</span></div></div>
+  </div>
+</section>
+
+<!-- WHY QUICKCART -->
+<section class="sec">
+  <div class="sec-head reveal"><div class="sec-kicker">Our Promise</div><h2 class="sec-title">Why <em>QuickCart?</em></h2></div>
+  <div class="why-grid reveal">
+    <div class="why-card"><span class="wi">🚚</span><h3>Same-Day Delivery</h3><p>Order before 2pm, receive same day in major cities.</p></div>
+    <div class="why-card"><span class="wi">💰</span><h3>Best Price Guarantee</h3><p>We price-match any competitor. Find cheaper? We refund the difference.</p></div>
+    <div class="why-card"><span class="wi">🔒</span><h3>Secure Checkout</h3><p>Bank-level SSL encryption. Multiple payment methods.</p></div>
+    <div class="why-card"><span class="wi">🔄</span><h3>Easy 7-Day Returns</h3><p>Not satisfied? Return within 7 days — full refund guaranteed.</p></div>
+    <div class="why-card"><span class="wi">🎁</span><h3>Loyalty Rewards</h3><p>Earn QuickCoins on every purchase. Redeem for discounts.</p></div>
+    <div class="why-card"><span class="wi">📞</span><h3>24/7 Live Support</h3><p>Real humans via call, WhatsApp, and live chat.</p></div>
+    <div class="why-card"><span class="wi">✅</span><h3>100% Genuine</h3><p>Every product verified. Certified sellers only.</p></div>
+    <div class="why-card"><span class="wi">🇵🇰</span><h3>Nationwide Coverage</h3><p>Delivering to all districts across Pakistan.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec bg-light">
+  <div class="sec-head reveal"><div class="sec-kicker">Customer Love</div><h2 class="sec-title">What Our <em>Customers Say</em></h2></div>
+  <div class="testi-grid reveal">
+    <div class="testi-card"><div class="t-stars">★★★★★</div><p class="t-text">"Ordered a Shalwar Kameez for Eid and it arrived next morning in perfect condition. Quality exceeded expectations. Will order again!"</p><div class="t-author"><div class="t-avatar">👨</div><div><div class="t-name">Ahmed Raza</div><div class="t-city">Faisalabad, Punjab ✓ Verified</div></div></div></div>
+    <div class="testi-card"><div class="t-stars">★★★★★</div><p class="t-text">"The wireless earbuds were exactly as described. Amazing sound quality at a great price. QuickCart is my go-to for electronics!"</p><div class="t-author"><div class="t-avatar">👩</div><div><div class="t-name">Fatima Khan</div><div class="t-city">Lahore, Punjab ✓ Verified</div></div></div></div>
+    <div class="testi-card"><div class="t-stars">★★★★★</div><p class="t-text">"Best online shopping experience in Pakistan! Return process was super easy. Customer service was very helpful throughout."</p><div class="t-author"><div class="t-avatar">👨</div><div><div class="t-name">Usman Ali</div><div class="t-city">Karachi, Sindh ✓ Verified</div></div></div></div>
+    <div class="testi-card"><div class="t-stars">★★★★☆</div><p class="t-text">"Ordered groceries and beauty products together. Both arrived fresh and well-packaged. Discount codes worked perfectly!"</p><div class="t-author"><div class="t-avatar">👩</div><div><div class="t-name">Sara Mahmood</div><div class="t-city">Islamabad, ICT ✓ Verified</div></div></div></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-sec">
+  <div class="nl-inner reveal">
+    <div class="nl-left"><h2 class="nl-title">Get Exclusive Deals 🎁</h2><p class="nl-sub">Subscribe and get <strong>10% OFF</strong> your first order plus early access to flash sales.</p></div>
+    <div class="nl-right">
+      <div class="nl-form"><input type="email" id="nlEmail" class="nl-input" placeholder="Enter your email address…"/><button class="nl-btn" onclick="subscribeNL()">Subscribe</button></div>
+      <p class="nl-note">No spam. Unsubscribe anytime.</p>
+      <div class="nl-success" id="nlSuccess">🎉 Subscribed! Check your email for your 10% OFF code.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec bg-dark" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="sec-kicker" style="background:rgba(255,255,255,.12);color:#FCD34D;">Get In Touch</div>
+      <h2 class="sec-title" style="color:white;text-align:left;">We're Here to <em>Help</em></h2>
+      <p style="color:rgba(255,255,255,.65);margin:1rem 0 2rem;line-height:1.8;">Questions, complaints, bulk orders or partnerships — our team is ready 24/7.</p>
+      <div class="cinfo-list">
+        <div class="ci"><div class="ci-icon">📍</div><div><strong>Head Office</strong><span>Main Boulevard, Faisalabad, Punjab</span></div></div>
+        <div class="ci"><div class="ci-icon">📞</div><div><strong>Phone &amp; WhatsApp</strong><span>03194854924</span></div></div>
+        <div class="ci"><div class="ci-icon">✉️</div><div><strong>Email</strong><span>nimramumtaz29@gmail.com</span></div></div>
+        <div class="ci"><div class="ci-icon">🕐</div><div><strong>Support Hours</strong><span>24/7 — Every Day</span></div></div>
+        <div class="ci"><div class="ci-icon">🚚</div><div><strong>Delivery Hotline</strong><span>0800-QUICKCART (Toll Free)</span></div></div>
+      </div>
+    </div>
+    <div class="contact-form-card reveal">
+      <h3 class="cf-title">Send a Message</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="cfFirst" placeholder="Nimra"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="cfLast" placeholder="Mumtaz"/></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="cfEmail" placeholder="nimramumtaz29@gmail.com"/></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" id="cfPhone" placeholder="03194854924"/></div>
+      <div class="form-group"><label>Department</label>
+        <select id="cfDept"><option>General Inquiry</option><option>Order Support</option><option>Return / Refund</option><option>Bulk / Wholesale</option><option>Become a Seller</option><option>Media &amp; PR</option></select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea id="cfMsg" placeholder="Tell us how we can help you…"></textarea></div>
+      <button class="cf-btn" onclick="sendMsg()">Send Message →</button>
+      <div class="cf-success" id="cfSuccess">✅ Message received! We'll reply within 2 hours.</div>
+    </div>
+  </div>
+</section>
+<!-- DEMO LINKS TABLE -->
+<section class="sec bg-light">
+  <div class="sec-head">
+    <div class="sec-kicker">Project Links</div>
+    <h2 class="sec-title">View <em>Live Demo</em></h2>
+  </div>
+
+  <div style="display:flex; justify-content:center;">
+    <table border="1" cellpadding="10" cellspacing="0" style="border-collapse:collapse; background:white; text-align:center;">
+      <tr style="background:#eee;">
+        <th>File</th>
+        <th>Live Demo</th>
+      </tr>
+      <tr>
+        <td><a href="index.html">My Website</a></td>
+        <td><a href="https://nimramumtaz.github.io/NimraMumtaz29.github.io/" target="_blank">Open Site</a></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Quick<span>Cart</span></div>
+      <p>Pakistan's largest multi-category online mall. Delivering quality products with speed, trust, and best prices.</p>
+      <div class="footer-socials"><span>📘</span><span>📸</span><span>🐦</span><span>▶️</span><span>💬</span></div>
+    </div>
+    <div class="footer-col"><h5>Quick Shop</h5><a href="#shop">Food &amp; Drinks</a><a href="#shop">Fashion</a><a href="#shop">Electronics</a><a href="#shop">Beauty &amp; Care</a><a href="#shop">Sports &amp; Fitness</a></div>
+    <div class="footer-col"><h5>Support</h5><a href="#contact">Help Center</a><a href="#contact">Track Order</a><a href="#contact">Returns &amp; Refunds</a><a href="#contact">Size Guide</a></div>
+    <div class="footer-col"><h5>Company</h5><a href="#">About QuickCart</a><a href="#">Careers</a><a href="#">Sell on QuickCart</a><a href="#">Affiliate Program</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 QuickCart. All rights reserved. Made with ❤️ in Faisalabad 🇵🇰</span>
+    <div class="pay-row"><span class="pbadge">COD</span><span class="pbadge">Easypaisa</span><span class="pbadge">JazzCash</span><span class="pbadge">Visa</span><span class="pbadge">MasterCard</span></div>
+  </div>
+</footer>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+<!-- CART PANEL -->
+<div class="side-panel" id="cartPanel">
+  <div class="panel-hdr"><span class="panel-title">🛒 Shopping Cart</span><button class="panel-close" onclick="closePanels()">✕</button></div>
+  <div class="panel-body" id="cartBody">
+    <div class="panel-empty" id="cartEmpty"><div class="pe-icon">🛍️</div><p class="pe-title">Your cart is empty</p><p class="pe-sub">Browse products and add items!</p></div>
+  </div>
+  <div class="panel-footer">
+    <div class="cart-rows">
+      <div class="cart-row"><span>Subtotal</span><span id="cartSub">Rs. 0</span></div>
+      <div class="cart-row"><span>Delivery</span><span id="cartDel">Free</span></div>
+    </div>
+    <div class="cart-total-line"><span>Total</span><span class="ctv" id="cartTotalVal">Rs. 0</span></div>
+    <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout →</button>
+    <p class="cart-note">🔒 Secure · Free delivery above Rs.1,500</p>
+  </div>
+</div>
+
+<!-- WISHLIST PANEL -->
+<div class="side-panel wish-panel" id="wishPanel">
+  <div class="panel-hdr"><span class="panel-title">❤️ Wishlist</span><button class="panel-close" onclick="closePanels()">✕</button></div>
+  <div class="panel-body" id="wishBody">
+    <div class="panel-empty" id="wishEmpty"><div class="pe-icon">💝</div><p class="pe-title">Wishlist is empty</p><p class="pe-sub">Tap ❤️ on any product to save it!</p></div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-wrap" id="checkModal">
+  <div class="modal-box">
+    <div class="modal-hdr"><span class="modal-title">📦 Checkout</span><button class="modal-close" onclick="closeCheckout()">✕</button></div>
+    <div class="modal-body">
+      <div class="order-summary"><h4>Order Summary</h4><div id="orderItems"></div><div class="order-total-row"><span>Total Payable</span><span id="orderTotal">Rs. 0</span></div></div>
+      <h4 class="form-sec-title">Delivery Details</h4>
+      <div class="form-row">
+        <div class="form-group"><label>First Name *</label><input type="text" id="coFirst" placeholder="Nimra"/></div>
+        <div class="form-group"><label>Last Name *</label><input type="text" id="coLast" placeholder="Mumtaz"/></div>
+      </div>
+      <div class="form-group"><label>Phone *</label><input type="tel" id="coPhone" placeholder="03194854924"/></div>
+      <div class="form-group"><label>Email</label><input type="email" id="coEmail" placeholder="nimramumtaz29@gmail.com"/></div>
+      <div class="form-group"><label>Delivery Address *</label><input type="text" id="coAddr" placeholder="House No., Street, Area, City"/></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label><input type="text" id="coCity" value="Faisalabad"/></div>
+        <div class="form-group"><label>Payment</label><select id="coPay"><option>Cash on Delivery</option><option>Easypaisa</option><option>JazzCash</option><option>Credit / Debit Card</option><option>Bank Transfer</option></select></div>
+      </div>
+      <div class="form-group"><label>Promo Code</label><input type="text" id="coPromo" placeholder="Enter promo code (optional)"/></div>
+      <div class="form-group"><label>Special Instructions</label><textarea id="coNotes" placeholder="Any special delivery instructions…"></textarea></div>
+      <button class="place-btn" onclick="placeOrder()">🎉 Place Order Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-wrap" id="successWrap">
+  <div class="success-box">
+    <div class="s-icon">🎉</div>
+    <h2>Order Confirmed!</h2>
+    <p>Thank you for shopping with QuickCart! Your order is being prepared and will be delivered soon.</p>
+    <div class="s-oid" id="successOid"></div>
+    <p style="font-size:.82rem;margin-top:.4rem;color:#6B5B9E;">Estimated delivery: <strong>1–3 Business Days</strong></p>
+    <button class="s-close" onclick="closeSuccess()">Continue Shopping 🛍️</button>
+  </div>
+</div>
+
+<!-- QUICK VIEW -->
+<div class="qv-wrap" id="qvWrap">
+  <div class="qv-box">
+    <button class="qv-close" onclick="closeQV()">✕</button>
+    <div class="qv-img-side" id="qvImg"></div>
+    <div class="qv-info-side" id="qvInfo"></div>
+  </div>
+</div>
+
+<!-- TOASTS -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
